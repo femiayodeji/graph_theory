@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+//adjacency List representation
 public class Graph
 {
     private LinkedList<int>[] _graph;
