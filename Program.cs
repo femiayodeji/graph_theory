@@ -8,7 +8,7 @@ namespace graph_theory
         {
             Console.WriteLine("Graph Theory");
 
-            var testGraph = new Adjacency_List_Graph(5);
+            Graph testGraph = new Adjacency_List_Graph(5);
 
             testGraph.AddEdge(0,1);
             testGraph.AddEdge(0,4);

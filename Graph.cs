@@ -1,8 +1,13 @@
 using System;
 using System.Collections.Generic;
 
-//adjacency List representation
-public class Adjacency_List_Graph
+public interface Graph
+{
+    void AddEdge(int u, int v);
+    string ToString();
+}
+
+public class Adjacency_List_Graph : Graph
 {
     private LinkedList<int>[] _graph;
     
@@ -39,7 +44,7 @@ public class Adjacency_List_Graph
     }
 }
 
-public class Adjacency_Matrix_Graph
+public class Adjacency_Matrix_Graph : Graph
 {
     private int[][] _graph;
     
