@@ -33,7 +33,7 @@ public class Adjacency_List_Graph : Graph
         string output = "";
         for(int i = 0; i < _graph.Length; i++)
         {
-            output += $"Adjacent list of vertex {i}\n Head";
+            output += $"Vertex {i}\n Head";
             foreach (var item in _graph[i])
             {
                 output += $" -> {item}";                
@@ -50,14 +50,19 @@ public class Adjacency_Matrix_Graph : Graph
     
     public Adjacency_Matrix_Graph(int vertices)
     {
+        _graph = new int[vertices][];
          Initialize();  
     }
 
     private void Initialize(){
+        for (int i = 0; i < _graph.Length; i++)
+            _graph[i] = new int[_graph.Length];
     }
 
     public void AddEdge(int u, int v)
     {
+        _graph[u][v] = 1;
+        _graph[v][u] = 1;
     }
 
     public override string ToString()
@@ -65,6 +70,11 @@ public class Adjacency_Matrix_Graph : Graph
         string output = "";
         for(int i = 0; i < _graph.Length; i++)
         {
+            output += $"Vertex {i}\n Head";
+            foreach (var item in _graph[i])
+            {
+                output += $" | {item}";                
+            }            
             output += "\n";
         }
         return output;
