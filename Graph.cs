@@ -38,3 +38,30 @@ public class Adjacency_List_Graph
         return output;
     }
 }
+
+public class Adjacency_Matrix_Graph
+{
+    private int[][] _graph;
+    
+    public Adjacency_Matrix_Graph(int vertices)
+    {
+         Initialize();  
+    }
+
+    private void Initialize(){
+    }
+
+    public void AddEdge(int u, int v)
+    {
+    }
+
+    public override string ToString()
+    {
+        string output = "";
+        for(int i = 0; i < _graph.Length; i++)
+        {
+            output += "\n";
+        }
+        return output;
+    }
+}
