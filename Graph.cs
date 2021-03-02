@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 
 //adjacency List representation
-public class Graph
+public class Adjacency_List_Graph
 {
     private LinkedList<int>[] _graph;
     
-    public Graph(int vertices)
+    public Adjacency_List_Graph(int vertices)
     {
          _graph = new LinkedList<int>[vertices]; 
          Initialize();  
