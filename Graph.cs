@@ -16,7 +16,7 @@ public class Graph
             _graph[i] = new LinkedList<int>();
     }
 
-    public void addEdge(int u, int v)
+    public void AddEdge(int u, int v)
     {
         _graph[u].AddLast(v);
         _graph[v].AddLast(u);
@@ -27,7 +27,7 @@ public class Graph
         string output = "";
         for(int i = 0; i < _graph.Length; i++)
         {
-            output += $"Adjacent list of vertex {i+1}\n Head";
+            output += $"Adjacent list of vertex {i}\n Head";
             foreach (var item in _graph[i])
             {
                 output += $" -> {item}";                
