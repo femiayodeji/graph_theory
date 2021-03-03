@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public interface Graph
 {
@@ -12,7 +13,7 @@ public interface Search
     void BFS(int startNode);
 }
 
-public class Adjacency_List_Graph : Graph
+public class Adjacency_List_Graph : Graph, Search
 {
     private LinkedList<int>[] _graph;
     
@@ -46,6 +47,37 @@ public class Adjacency_List_Graph : Graph
             output += "\n";
         }
         return output;
+    }
+
+    public void BFS(int startNode)
+    {
+        int v = _graph.Length;
+        bool[] visited = new bool[v];
+        for (int i = 0; i < v; i++)
+            visited[i] = false;
+
+        LinkedList<int> queue = new LinkedList<int>();
+
+        visited[startNode] = true;
+        queue.AddLast(startNode);
+
+        while(queue.Any())
+        {
+            startNode = queue.First();
+            Console.Write($"{startNode} ");
+            queue.RemoveFirst();
+
+            LinkedList<int> list = _graph[startNode];
+
+            foreach (var val in list)
+            {
+                if (!visited[val])
+                {
+                    visited[val] = true;
+                    queue.AddLast(val);
+                }
+            }
+        }
     }
 }
 
