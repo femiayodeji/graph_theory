@@ -7,6 +7,11 @@ public interface Graph
     string ToString();
 }
 
+public interface Search
+{
+    void BFS(int startNode);
+}
+
 public class Adjacency_List_Graph : Graph
 {
     private LinkedList<int>[] _graph;
