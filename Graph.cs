@@ -11,6 +11,7 @@ public interface Graph
 public interface Search
 {
     void BFS(int startNode);
+    void DFS();
 }
 
 public class Adjacency_List_Graph : Graph, Search
