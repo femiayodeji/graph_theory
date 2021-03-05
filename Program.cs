@@ -23,20 +23,23 @@ namespace graph_theory
             Console.WriteLine(testListGraph.ToString());
 
             Console.WriteLine("Adjacency Matrix Representation");
-            Adjacency_Matrix_Graph testGraph = new Adjacency_Matrix_Graph(5);
+            Adjacency_Matrix_Graph testMatrixGraph = new Adjacency_Matrix_Graph(5);
 
-            testGraph.AddEdge(0,1);
-            testGraph.AddEdge(0,4);
-            testGraph.AddEdge(1,2);
-            testGraph.AddEdge(1,3);
-            testGraph.AddEdge(1,4);
-            testGraph.AddEdge(2,3);
-            testGraph.AddEdge(3,4);
+            testMatrixGraph.AddEdge(0,1);
+            testMatrixGraph.AddEdge(0,4);
+            testMatrixGraph.AddEdge(1,2);
+            testMatrixGraph.AddEdge(1,3);
+            testMatrixGraph.AddEdge(1,4);
+            testMatrixGraph.AddEdge(2,3);
+            testMatrixGraph.AddEdge(3,4);
 
-            Console.WriteLine(testGraph.ToString());
+            Console.WriteLine(testMatrixGraph.ToString());
 
-            Console.Write("Breadth First Search => ");
+            Console.Write("\nBreadth First Search => ");
             testListGraph.BFS(2);
+
+            Console.Write("\nDepth First Search => ");
+            testListGraph.DFS(2);
 
         }
     }
