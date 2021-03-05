@@ -11,7 +11,7 @@ public interface Graph
 public interface Search
 {
     void BFS(int startNode);
-    void DFS();
+    void DFS(int startNode);
 }
 
 public class Adjacency_List_Graph : Graph, Search
@@ -78,6 +78,25 @@ public class Adjacency_List_Graph : Graph, Search
                     queue.AddLast(val);
                 }
             }
+        }
+    }
+
+    public void DFS(int startNode)
+    {
+        bool[] visited = new bool[_graph.Length];
+        DepthSearch(startNode, visited);
+    }
+    
+    public void DepthSearch(int node, bool[] visited)
+    {
+        visited[node] = true;
+        Console.Write($"{node} ");
+
+        LinkedList<int> nodes = _graph[node];
+        foreach( var neighbour in nodes)
+        {
+            if (!visited[neighbour])
+                DepthSearch(neighbour, visited);
         }
     }
 }
