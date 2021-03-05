@@ -68,9 +68,9 @@ public class Adjacency_List_Graph : Graph, Search
             Console.Write($"{startNode} ");
             queue.RemoveFirst();
 
-            LinkedList<int> list = _graph[startNode];
+            LinkedList<int> nodes = _graph[startNode];
 
-            foreach (var val in list)
+            foreach (var val in nodes)
             {
                 if (!visited[val])
                 {
