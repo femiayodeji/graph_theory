@@ -41,6 +41,18 @@ namespace graph_theory
             Console.Write("\nDepth First Search => ");
             testListGraph.DFS(2);
 
+            Adjacency_List_Graph cyclicGraph = new Adjacency_List_Graph(4);  
+            cyclicGraph.AddEdge(0, 1);  
+            cyclicGraph.AddEdge(0, 2);  
+            cyclicGraph.AddEdge(1, 2);  
+            cyclicGraph.AddEdge(2, 0);  
+            cyclicGraph.AddEdge(2, 3);  
+            cyclicGraph.AddEdge(3, 3);  
+
+            Console.WriteLine("\n\nDetect Cycle");
+            cyclicGraph.DFS(0);
+            Console.Write($"Has Cycle? {cyclicGraph.HasCycle().ToString()}");
+
         }
     }
 }
