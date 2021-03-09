@@ -99,6 +99,41 @@ public class Adjacency_List_Graph : Graph, Search
                 DepthSearch(neighbour, visited);
         }
     }
+
+    public bool HasCycle()
+    {
+        bool[] visited = new bool[_graph.Length];
+        bool[] memo = new bool[_graph.Length];
+
+        for (int i = 0; i < _graph.Length; i++)
+        {
+            if (isCyclic(i, visited, memo))
+                return true;
+        }
+        return false;
+    }
+
+    public bool isCyclic(int node, bool[] visited, bool[] memo)
+    {
+        if (memo[node])
+            return true;
+        
+        if (visited[node])
+            return true;
+
+        visited[node] = true;
+        memo[node] = true;
+
+        LinkedList<int> childrenNodes = _graph[node];
+
+        foreach(int childNode in childrenNodes)
+        {
+            if (isCyclic(childNode, visited, memo))
+                return true;
+        }
+        memo[node] = false;
+        return false;
+    }
 }
 
 public class Adjacency_Matrix_Graph : Graph
